@@ -95,6 +95,8 @@ Frontend acessível em: [http://localhost:3000](http://localhost:3000)
 Desenvolvido por **Alexandre Yamaguishi**
 GitHub: [@jampus90](https://github.com/jampus90)
 
+demais desenvolvedores serão adicionados em breve
+
 ---
 
 ## 🧠 Objetivo
@@ -103,4 +105,4 @@ Este projeto é parte de uma iniciativa pessoal e comunitária para:
 
 * Aplicar conceitos de desenvolvimento full-stack
 * Estudar integração de serviços (como pagamentos)
-* Criar ferramentas úteis para a organização do Nipo Campinas
+* Criar ferramentas úteis para a organização do Departamento de Jovens Nipo Campinas
