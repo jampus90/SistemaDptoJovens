@@ -1,4 +1,3 @@
-```markdown
 # Sistema de Assinatura e Presença - Departamento de Jovens do Nipo Campinas
 
 Este projeto é um sistema de controle de **assinaturas com pagamento recorrente** e **registro de presença**, desenvolvido para uso no Departamento de Jovens do Nipo Campinas.  
@@ -105,5 +104,3 @@ Este projeto é parte de uma iniciativa pessoal e comunitária para:
 * Aplicar conceitos de desenvolvimento full-stack
 * Estudar integração de serviços (como pagamentos)
 * Criar ferramentas úteis para a organização do Nipo Campinas
-
-```
