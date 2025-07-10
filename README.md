@@ -1,80 +1,149 @@
+## 📄 `README.md` atualizado com passo a passo de instalação
+
+````markdown
 # Sistema de Assinatura e Presença - Departamento de Jovens do Nipo Campinas
 
-Este projeto é um sistema de controle de **assinaturas com pagamento recorrente** e **registro de presença**, desenvolvido para uso no Departamento de Jovens do Nipo Campinas.  
-Além de funcional, o projeto serve como estudo prático de tecnologias modernas como **React (TypeScript)** no frontend e **FastAPI (Python)** no backend.
+Este projeto é um sistema de controle de **assinaturas com pagamento recorrente** e **registro de presença**, desenvolvido para uso no Departamento de Jovens do Nipo Campinas.
 
 ---
 
 ## 🧱 Tecnologias Utilizadas
 
 ### Frontend
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Axios](https://axios-http.com/)
-- [Tailwind CSS](https://tailwindcss.com/) *(opcional)*
-- [Vite](https://vitejs.dev/) *(ou Create React App)*
+- React (TypeScript)
+- Axios
+- Tailwind CSS (opcional)
+- React Router
 
 ### Backend
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [Uvicorn](https://www.uvicorn.org/) - servidor ASGI
-- [SQLAlchemy](https://www.sqlalchemy.org/) *(para ORM)*
-- [PostgreSQL](https://www.postgresql.org/)
+- FastAPI
+- Uvicorn
+- SQLAlchemy
+- PostgreSQL
+- Pydantic
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## 🧑‍💻 Pré-requisitos
 
+### 🔧 Backend (Python 3.10.8)
+
+> ⚠️ É recomendado utilizar a versão exata: **Python 3.10.8**
+
+1. Baixe o instalador em:  
+   https://www.python.org/downloads/release/python-3108/
+
+2. Durante a instalação:
+   - Marque **"Add Python to PATH"**
+   - Escolha "Customize installation" → marque **pip** e **venv**
+
+3. Verifique no terminal:
+```bash
+python --version
+# ou
+py --version
+````
+
+---
+
+### 🌱 Criar ambiente virtual (venv)
+
+No terminal, dentro da pasta `backend/`:
+
+```bash
+# Windows
+py -3.10 -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python3.10 -m venv venv
+source venv/bin/activate
 ```
 
-SISTEMADPTOJOVENS/
-├── backend/          # FastAPI backend
-│   ├── app/
-│   │   └── main.py   # API principal
-│   └── venv/         # Ambiente virtual (ignorado pelo Git)
-├── frontend/         # React frontend
-│   └── src/
-└── README.md
+---
 
-````
+### 📦 Instalar dependências do backend
+
+```bash
+pip install fastapi uvicorn[standard] sqlalchemy psycopg2-binary python-dotenv
+```
+
+> ⚠️ Se usar SQLite, o `psycopg2-binary` não é necessário.
 
 ---
 
-## 🚀 Como Rodar o Projeto
-
-### 1. Backend (FastAPI)
+### 🚀 Rodar servidor backend
 
 ```bash
-# Navegue até o backend
-cd backend
-
-# Ative o ambiente virtual
-# Windows:
-venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
-
-# Rode o servidor FastAPI
 uvicorn app.main:app --reload
-````
+```
 
-Acesse a documentação da API em: [http://localhost:8000/docs](http://localhost:8000/docs)
+Acesse: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-### 2. Frontend (React)
+## 🌐 Frontend (React)
+
+### 1. Instalar Node.js (recomendado: 18.x ou superior)
+
+Baixe em: [https://nodejs.org/en](https://nodejs.org/en)
+
+Verifique:
 
 ```bash
-# Navegue até o frontend
+node -v
+npm -v
+```
+
+---
+
+### 2. Criar o projeto React (caso ainda não tenha feito)
+
+```bash
+npx create-react-app frontend --template typescript
 cd frontend
+```
 
-# Instale as dependências
-npm install
+---
 
-# Rode a aplicação
+### 3. Instalar dependências
+
+```bash
+npm install axios react-router-dom
+```
+
+Opcional:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+---
+
+### 4. Rodar o frontend
+
+```bash
 npm start
 ```
 
-Frontend acessível em: [http://localhost:3000](http://localhost:3000)
+Acesse: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📦 Estrutura do Projeto
+
+```
+SistemaDptoJovens/
+├── backend/
+│   ├── app/
+│   │   └── main.py
+│   └── venv/
+├── frontend/
+│   ├── src/
+│   │   └── pages/HomePage.tsx
+└── README.md
+```
 
 ---
 
@@ -84,25 +153,19 @@ Frontend acessível em: [http://localhost:3000](http://localhost:3000)
 * [ ] Cadastro e autenticação de usuários
 * [ ] Registro de presença
 * [ ] Planos de assinatura (mensal/anual)
-* [ ] Pagamentos recorrentes (Stripe/MercadoPago)
+* [ ] Pagamentos recorrentes
 * [ ] Painel administrativo
-* [ ] Deploy completo (Vercel + Render)
-
----
-
-## 📬 Contato
-
-Desenvolvido por **Alexandre Yamaguishi**
-GitHub: [@jampus90](https://github.com/jampus90)
-
-demais desenvolvedores serão adicionados em breve
+* [ ] Deploy em Vercel (frontend) e Render/Fly.io (backend)
 
 ---
 
 ## 🧠 Objetivo
 
-Este projeto é parte de uma iniciativa pessoal e comunitária para:
+Este projeto serve como estudo e também aplicação prática no Departamento de Jovens do Nipo Campinas, com foco em tecnologias modernas e boas práticas de desenvolvimento full-stack.
 
-* Aplicar conceitos de desenvolvimento full-stack
-* Estudar integração de serviços (como pagamentos)
-* Criar ferramentas úteis para a organização do Departamento de Jovens Nipo Campinas
+---
+
+## 👨‍💻 Desenvolvido por
+
+**Alexandre Yamaguishi**
+GitHub: [@jampus90](https://github.com/jampus90)
